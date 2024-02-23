@@ -98,12 +98,12 @@ public class Productpage extends AbstractMethods{
 		implicitlywaitmethod();
 
 		try {
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			//Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
 
-			Wait_Till_Link_Is_Clickable(product);
+			waitTillLinkIsClickable(product);
 			product.click();
 
 			Reusableclass rc = new Reusableclass(driver);
@@ -113,7 +113,7 @@ public class Productpage extends AbstractMethods{
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].scrollIntoView();", firstproduct);
 
-			Wait_Till_Link_Is_Clickable(firstproduct);
+			waitTillLinkIsClickable(firstproduct);
 			firstproduct.click();
 
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/product_details/1");
@@ -137,12 +137,12 @@ public class Productpage extends AbstractMethods{
 		prop.load(fs);
 
 		try {
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
 
-			Wait_Till_Link_Is_Clickable(product);
+			waitTillLinkIsClickable(product);
 			product.click();
 
 			Reusableclass rc = new Reusableclass(driver);
@@ -152,7 +152,7 @@ public class Productpage extends AbstractMethods{
 			String searchproduct1 = prop.getProperty("searchproduct");
 			searchproduct.sendKeys(searchproduct1);
 
-			Wait_Till_Link_Is_Clickable(searchbutton);
+			waitTillLinkIsClickable(searchbutton);
 			searchbutton.click();
 
 			rc.innerTextEquals(searchproducttext, "SEARCHED PRODUCTS");
@@ -177,27 +177,27 @@ public class Productpage extends AbstractMethods{
 
 		try {
 			Reusableclass rc = new Reusableclass(driver);
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
 
-			Wait_Till_Link_Is_Clickable(product);
+			waitTillLinkIsClickable(product);
 			product.click();
 
 			Hoveranyelement(select_firstproduct);
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].scrollIntoView();", scrolldown);
-			Wait_Till_Link_Is_Clickable(addcart1);
+			waitTillLinkIsClickable(addcart1);
 			addcart1.click();
 
-			Wait_Till_Link_Is_Clickable(continueshopping_button);
+			waitTillLinkIsClickable(continueshopping_button);
 			continueshopping_button.click();
 			Hoveranyelement(select_secondproduct);
-			Wait_Till_Link_Is_Clickable(addcart2);
+			waitTillLinkIsClickable(addcart2);
 			addcart2.click();
 
-			Wait_Till_Link_Is_Clickable(viewcartbutton);
+			waitTillLinkIsClickable(viewcartbutton);
 			viewcartbutton.click();
 
 			String product1 = prop.getProperty("product1");

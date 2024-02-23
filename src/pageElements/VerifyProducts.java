@@ -107,7 +107,7 @@ public class VerifyProducts extends AbstractMethods{
 
 		try {
 			Reusableclass rc = new Reusableclass(driver);
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
@@ -115,13 +115,13 @@ public class VerifyProducts extends AbstractMethods{
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].scrollIntoView();", scrolldown);
 
-			Wait_Till_Link_Is_Clickable(firstproduct);
+			waitTillLinkIsClickable(firstproduct);
 			firstproduct.click();
 
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/product_details/1");
 			rc.elementAvailable(productinfo, true);
 
-			Wait_Till_Link_Is_Clickable(quantity);
+			waitTillLinkIsClickable(quantity);
 			quantity.click();
 			quantity.sendKeys(Keys.CONTROL + "a");
 			quantity.sendKeys(Keys.DELETE);
@@ -129,9 +129,9 @@ public class VerifyProducts extends AbstractMethods{
 			String qunty = prop.getProperty("quantity");
 			quantity.sendKeys(qunty);
 
-			Wait_Till_Link_Is_Clickable(addcartbutton);
+			waitTillLinkIsClickable(addcartbutton);
 			addcartbutton.click();
-			Wait_Till_Link_Is_Clickable(viewcartbutton);
+			waitTillLinkIsClickable(viewcartbutton);
 			viewcartbutton.click();
 
 			String expectedquantity = quantity1.getText();
@@ -155,11 +155,11 @@ public class VerifyProducts extends AbstractMethods{
 
 		try {
 			Reusableclass rc = new Reusableclass(driver);
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
-			Wait_Till_Link_Is_Clickable(product);
+			waitTillLinkIsClickable(product);
 			product.click();
 
 			rc.innerTextEquals(allproductpage, "ALL PRODUCTS");
@@ -168,7 +168,7 @@ public class VerifyProducts extends AbstractMethods{
 			String searchproduct1 = prop.getProperty("searchproduct");
 			searchproduct.sendKeys(searchproduct1);
 
-			Wait_Till_Link_Is_Clickable(searchbutton);
+			waitTillLinkIsClickable(searchbutton);
 			searchbutton.click();
 
 			rc.innerTextEquals(searchproducttext, "SEARCHED PRODUCTS");
@@ -178,34 +178,34 @@ public class VerifyProducts extends AbstractMethods{
 			js.executeScript("arguments[0].scrollIntoView();", categorytext);
 
 			Hoveranyelement(select_firstproduct);
-			Wait_Till_Link_Is_Clickable(addcart1);
+			waitTillLinkIsClickable(addcart1);
 			addcart1.click();
 
-			Wait_Till_Link_Is_Clickable(viewcartbutton);
+			waitTillLinkIsClickable(viewcartbutton);
 			viewcartbutton.click();
 			rc.elementAvailable(wintertop, true);
 
-			Wait_Till_Link_Is_Clickable(login);
+			waitTillLinkIsClickable(login);
 			login.click();
 			ReusableMethods rs = new ReusableMethods(driver);
 			rs.signup();
 			rs.registrationpage();
-			Wait_Till_Link_Is_Clickable(login);
+			waitTillLinkIsClickable(login);
 			login.click();
-			Wait_Till_Link_Is_Clickable(logout);
+			waitTillLinkIsClickable(logout);
 			logout.click();
 			rc.innerTextEquals(loginaccount, "Login to your account");
 			rs.login();
 			rc.innerTextEquals(loogedinas, loogedinas.getText());
 
-			Wait_Till_Link_Is_Clickable(cartbutton);
+			waitTillLinkIsClickable(cartbutton);
 			cartbutton.click();
 			rc.elementAvailable(wintertop, true);
 
-			Wait_Till_Link_Is_Clickable(deleteaccount);
+			waitTillLinkIsClickable(deleteaccount);
 			deleteaccount.click();
 			rc.innerTextEquals(accountdeletedinfo, "ACCOUNT DELETED!");
-			Wait_Till_Link_Is_Clickable(Continuebutton);
+			waitTillLinkIsClickable(Continuebutton);
 			Continuebutton.click();
 
 			System.out.println("Testcase20--> executed succesfully....");
@@ -228,18 +228,18 @@ public class VerifyProducts extends AbstractMethods{
 		try {
 
 			Reusableclass rc = new Reusableclass(driver);
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
-			Wait_Till_Link_Is_Clickable(product);
+			waitTillLinkIsClickable(product);
 			product.click();
 			rc.innerTextEquals(allproductpage, "ALL PRODUCTS");
 			rc.elementAvailable(productlist, true);
 
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].scrollIntoView();", category);
-			Wait_Till_Link_Is_Clickable(viewproduct1);
+			waitTillLinkIsClickable(viewproduct1);
 			viewproduct1.click();
 			Assert.assertEquals(userreview.getText(), "WRITE YOUR REVIEW");
 
@@ -250,11 +250,11 @@ public class VerifyProducts extends AbstractMethods{
 			String review1 = prop.getProperty("review");
 			review.sendKeys(review1);
 			js.executeScript("arguments[0].scrollIntoView();", submitbutton);
-			Wait_Till_Link_Is_Clickable(submitbutton);
+			waitTillLinkIsClickable(submitbutton);
 			submitbutton.click();
 
 			try {
-				visibility_Of_Element_Located(successmessage);
+				visibilityOfElementLocated(successmessage);
 			} catch (Exception e) {
 				System.err.println("Error while waiting for the notification to appear: " + e.getMessage());
 			}

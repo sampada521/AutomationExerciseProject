@@ -42,16 +42,16 @@ public class Recommendeditems extends AbstractMethods{
 		prop.load(fs);
 		try {
 			Reusableclass rc = new Reusableclass(driver);
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
 
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].scrollIntoView();", recommandeditemstext);
 			rc.innerTextEquals(recommandeditemstext, "RECOMMENDED ITEMS");
-			Wait_Till_Link_Is_Clickable(firstproduct);
+			waitTillLinkIsClickable(firstproduct);
 			firstproduct.click();
-			Wait_Till_Link_Is_Clickable(viewcart);
+			waitTillLinkIsClickable(viewcart);
 			viewcart.click();
 			rc.elementAvailable(productvisibility, true);
 

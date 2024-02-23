@@ -101,7 +101,7 @@ public class ReusableMethods extends AbstractMethods {
 		name.sendKeys(username);
 		emailaddress.sendKeys(emailid);
 
-		Wait_Till_Link_Is_Clickable(signup);
+		waitTillLinkIsClickable(signup);
 		signup.click();
 	}
 
@@ -114,11 +114,11 @@ public class ReusableMethods extends AbstractMethods {
 
 		String emailid = xs.get_password(1, 1).toString();
 		email.sendKeys(emailid);
-		Wait_Till_Link_Is_Clickable(password1);
+		waitTillLinkIsClickable(password1);
 		password1.click();
 		password1.sendKeys((sheet.getRow(2).getCell(1)).toString());
 
-		Wait_Till_Link_Is_Clickable(loginbutton);
+		waitTillLinkIsClickable(loginbutton);
 		loginbutton.click();
 	}
 
@@ -130,7 +130,7 @@ public class ReusableMethods extends AbstractMethods {
 			XSSFWorkbook workbook = new XSSFWorkbook(fs1);
 			XSSFSheet sheet = workbook.getSheetAt(0);
 
-			Wait_Till_Link_Is_Clickable(password);
+			waitTillLinkIsClickable(password);
 			password.click();
 			password.sendKeys((sheet.getRow(2).getCell(1)).toString());
 
@@ -139,29 +139,29 @@ public class ReusableMethods extends AbstractMethods {
 
 			XSSFCell Day = sheet.getRow(3).getCell(1);
 			String day = (NumberToTextConverter.toText(Day.getNumericCellValue()));
-			Wait_Till_Link_Is_Clickable(days);
+			waitTillLinkIsClickable(days);
 			days.click();
 			WebElement Day1 = driver.findElement(By.xpath("//*[text()='" + day + "']"));
-			Wait_Till_Link_Is_Clickable(Day1);
+			waitTillLinkIsClickable(Day1);
 			Day1.click();
 
 			XSSFCell Month = sheet.getRow(4).getCell(1);
 			String month = Month.toString();
-			Wait_Till_Link_Is_Clickable(months);
+			waitTillLinkIsClickable(months);
 			months.click();
 			WebElement months1 = driver.findElement(By.xpath("//*[text()='" + month + "']"));
-			Wait_Till_Link_Is_Clickable(months1);
+			waitTillLinkIsClickable(months1);
 			months1.click();
 
 			XSSFCell Year = sheet.getRow(5).getCell(1);
 			String year = (NumberToTextConverter.toText(Year.getNumericCellValue()));
-			Wait_Till_Link_Is_Clickable(years);
+			waitTillLinkIsClickable(years);
 			years.click();
 			WebElement years1 = driver.findElement(By.xpath("//*[text()='" + year + "']"));
-			Wait_Till_Link_Is_Clickable(years1);
+			waitTillLinkIsClickable(years1);
 			years1.click();
 
-			Wait_Till_Link_Is_Clickable(checkbox);
+			waitTillLinkIsClickable(checkbox);
 			checkbox.click();
 			firstname.sendKeys((sheet.getRow(6).getCell(1)).toString());
 			lastname.sendKeys((sheet.getRow(7).getCell(1)).toString());
@@ -180,7 +180,7 @@ public class ReusableMethods extends AbstractMethods {
 
 			js.executeScript("arguments[0].scrollIntoView();", createaccount);
 
-			Wait_Till_Link_Is_Clickable(createaccount);
+			waitTillLinkIsClickable(createaccount);
 			createaccount.click();
 		}
 
@@ -230,7 +230,7 @@ public class ReusableMethods extends AbstractMethods {
 		String expiryyear1 = prop.getProperty("expiryyear");
 		expiryyear.sendKeys(expiryyear1);
 
-		Wait_Till_Link_Is_Clickable(placeorder);
+		waitTillLinkIsClickable(placeorder);
 		placeorder.click();
 	}
 }

@@ -46,7 +46,7 @@ public class Subscription extends AbstractMethods{
 				System.getProperty("user.dir") + ("\\src\\testData\\GlobalInput.properties"));
 		prop.load(fs);
 		try {
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			RegisterUser ru = new RegisterUser(driver);
@@ -61,11 +61,11 @@ public class Subscription extends AbstractMethods{
 			String emailid = prop.getProperty("emailid");
 			emailtextbox.sendKeys(emailid);
 
-			Wait_Till_Link_Is_Clickable(submitbutton);
+			waitTillLinkIsClickable(submitbutton);
 			submitbutton.click();
 
 			try {
-				visibility_Of_Element_Located(successmessage);
+				visibilityOfElementLocated(successmessage);
 			} catch (Exception e) {
 				System.err.println("Error while waiting for the notification to appear: " + e.getMessage());
 			}
@@ -86,13 +86,13 @@ public class Subscription extends AbstractMethods{
 				System.getProperty("user.dir") + ("\\src\\testData\\GlobalInput.properties"));
 		prop.load(fs);
 		try {
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			RegisterUser ru = new RegisterUser(driver);
 			ru.homepagevisibiblity();
 
-			Wait_Till_Link_Is_Clickable(cartpage);
+			waitTillLinkIsClickable(cartpage);
 			cartpage.click();
 
 			JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -104,11 +104,11 @@ public class Subscription extends AbstractMethods{
 			String emailid = prop.getProperty("emailid");
 			emailtextbox.sendKeys(emailid);
 
-			Wait_Till_Link_Is_Clickable(submitbutton);
+			waitTillLinkIsClickable(submitbutton);
 			submitbutton.click();
 
 			try {
-				visibility_Of_Element_Located(successmessage);
+				visibilityOfElementLocated(successmessage);
 			} catch (Exception e) {
 				System.err.println("Error while waiting for the notification to appear: " + e.getMessage());
 			}

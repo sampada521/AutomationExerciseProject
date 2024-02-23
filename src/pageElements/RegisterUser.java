@@ -57,7 +57,7 @@ public class RegisterUser extends AbstractMethods{
 		System.out.println("after wait");
 		Reusableclass rc = new Reusableclass(driver);
 		rc.urlEquals("https://automationexercise.com/");
-		Wait_Till_Link_Is_Clickable(login);
+		waitTillLinkIsClickable(login);
 		login.click();
 		System.out.println("homepagevisibiblity() ends...");
 	}
@@ -73,21 +73,21 @@ public class RegisterUser extends AbstractMethods{
 			rs.signup();
 
 			Assert.assertEquals(enteraccountinfo.getText(), "ENTER ACCOUNT INFORMATION");
-			Wait_Till_Link_Is_Clickable(title);
+			waitTillLinkIsClickable(title);
 			title.click();
 
 			rs.registrationpage();
 			Assert.assertEquals(accountcreatedmessage.getText(), "ACCOUNT CREATED!");
 
-			Wait_Till_Link_Is_Clickable(Continuebutton);
+			waitTillLinkIsClickable(Continuebutton);
 			Continuebutton.click();
 			Assert.assertEquals(loogedinas.getText(), loogedinas.getText());
 
-			Wait_Till_Link_Is_Clickable(deleteaccount);
+			waitTillLinkIsClickable(deleteaccount);
 			deleteaccount.click();
 			Assert.assertEquals(accountdeletedinfo.getText(), "ACCOUNT DELETED!");
 
-			Wait_Till_Link_Is_Clickable(Continuebutton);
+			waitTillLinkIsClickable(Continuebutton);
 			Continuebutton.click();
 			System.out.println("Testcase1--> executed succesfully...");
 		}
@@ -105,7 +105,7 @@ public class RegisterUser extends AbstractMethods{
 		implicitlywaitmethod();
 
 		try {
-			Wait_Till_Link_Is_Clickable(login);
+			waitTillLinkIsClickable(login);
 			login.click();
 
 			ReusableMethods rs = new ReusableMethods(driver);
@@ -125,12 +125,12 @@ public class RegisterUser extends AbstractMethods{
 			rs.login();
 			rc.innerTextEquals(loogedinas, loogedinas.getText());
 
-			Wait_Till_Link_Is_Clickable(deleteaccount);
+			waitTillLinkIsClickable(deleteaccount);
 			deleteaccount.click();
 
 			rc.innerTextEquals(accountdeletedinfo, "ACCOUNT DELETED!");
 
-			Wait_Till_Link_Is_Clickable(Continuebutton);
+			waitTillLinkIsClickable(Continuebutton);
 			Continuebutton.click();
 
 			System.out.println("Testcase5--> executed succesfully...");

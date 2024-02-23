@@ -64,7 +64,7 @@ public class CategoryProducts extends AbstractMethods{
 
 		try {
 			Reusableclass rc = new Reusableclass(driver);
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
@@ -73,15 +73,15 @@ public class CategoryProducts extends AbstractMethods{
 			
 			rc.elementAvailable(categorytext, true);
 			rc.elementAvailable(categories, true);
-			Wait_Till_Link_Is_Clickable(women_category);
+			waitTillLinkIsClickable(women_category);
 			women_category.click();
-			Wait_Till_Link_Is_Clickable(dress_categorylink);
+			waitTillLinkIsClickable(dress_categorylink);
 			dress_categorylink.click();
 			rc.innerTextEquals(productlisttext,"WOMEN - DRESS PRODUCTS");
 			
-			Wait_Till_Link_Is_Clickable(men_category);
+			waitTillLinkIsClickable(men_category);
 			men_category.click();
-			Wait_Till_Link_Is_Clickable(Tshirt_categorylink);
+			waitTillLinkIsClickable(Tshirt_categorylink);
 			Tshirt_categorylink.click();
 			rc.innerTextEquals(Tshirtlisttext,"MEN - TSHIRTS PRODUCTS");
 			
@@ -103,11 +103,11 @@ public class CategoryProducts extends AbstractMethods{
 
 		try {
 			Reusableclass rc = new Reusableclass(driver);
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
-			Wait_Till_Link_Is_Clickable(product);
+			waitTillLinkIsClickable(product);
 			product.click();
 			
 			rc.elementAvailable(brandtext, true);
@@ -116,11 +116,11 @@ public class CategoryProducts extends AbstractMethods{
 			visibilityOfElement(brandtext);
 			rc.elementAvailable(brands, true);
 			
-			Wait_Till_Link_Is_Clickable(polo);
+			waitTillLinkIsClickable(polo);
 			polo.click();
 			rc.innerTextEquals(pololisttext,"BRAND - POLO PRODUCTS");
 			
-			Wait_Till_Link_Is_Clickable(madame);
+			waitTillLinkIsClickable(madame);
 			madame.click();
 			rc.innerTextEquals(madamelisttext,"BRAND - MADAME PRODUCTS");
 			

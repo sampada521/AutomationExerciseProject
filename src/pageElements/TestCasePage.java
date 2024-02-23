@@ -28,13 +28,13 @@ public class TestCasePage extends AbstractMethods{
 		try {
 			
 
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			RegisterUser ru = new RegisterUser(driver);
 			ru.homepagevisibiblity();
 
-			Wait_Till_Link_Is_Clickable(testcases);
+			waitTillLinkIsClickable(testcases);
 			testcases.click();
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/test_cases");
 

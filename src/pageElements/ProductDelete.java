@@ -48,7 +48,7 @@ public class ProductDelete extends AbstractMethods{
 
 		try {
 			Reusableclass rc = new Reusableclass(driver);
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
@@ -57,18 +57,18 @@ public class ProductDelete extends AbstractMethods{
 			js.executeScript("arguments[0].scrollIntoView();", scrolldown);
 
 			Hoveranyelement(select_firstproduct);
-			Wait_Till_Link_Is_Clickable(addcart1);
+			waitTillLinkIsClickable(addcart1);
 			addcart1.click();
-			Wait_Till_Link_Is_Clickable(viewcart);
+			waitTillLinkIsClickable(viewcart);
 			viewcart.click();
 
 			js.executeScript("arguments[0].scrollIntoView();", homepage);
 
-			Wait_Till_Link_Is_Clickable(cartbutton);
+			waitTillLinkIsClickable(cartbutton);
 			cartbutton.click();
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/view_cart");
 			
-			Wait_Till_Link_Is_Clickable(deletecart);
+			waitTillLinkIsClickable(deletecart);
 			deletecart.click();
 			
 			try {

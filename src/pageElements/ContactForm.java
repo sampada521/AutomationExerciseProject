@@ -33,12 +33,12 @@ public class ContactForm extends AbstractMethods {
 		implicitlywaitmethod();
 
 		try {
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
 
-			Wait_Till_Link_Is_Clickable(contactus);
+			waitTillLinkIsClickable(contactus);
 			contactus.click();
 
 			Reusableclass rc = new Reusableclass(driver);
@@ -49,7 +49,7 @@ public class ContactForm extends AbstractMethods {
 
 			uploadfile.sendKeys("C:\\Users\\atamboli\\Desktop\\Excelr\\ProjectDataSam.xlsx");
 
-			Wait_Till_Link_Is_Clickable(submitbutton);
+			waitTillLinkIsClickable(submitbutton);
 			submitbutton.click();
 
 			String message = driver.switchTo().alert().getText();
@@ -61,7 +61,7 @@ public class ContactForm extends AbstractMethods {
 
 			rc.innerTextEquals(successmsg, "Success! Your details have been submitted successfully.");
 
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			rc.urlEquals("https://automationexercise.com/");

@@ -45,7 +45,7 @@ public class Scrollupdown_funtionality extends AbstractMethods{
 		try 
 		{
 			Reusableclass rc = new Reusableclass(driver);
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
@@ -55,7 +55,7 @@ public class Scrollupdown_funtionality extends AbstractMethods{
 			rc.innerTextEquals(subscriptiontext, "SUBSCRIPTION");
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
 			wait.until(ExpectedConditions.elementToBeClickable(scrollup));
-			Wait_Till_Link_Is_Clickable(scrollup);
+			waitTillLinkIsClickable(scrollup);
 			scrollup.click();
 			rc.innerTextEquals(message, "Full-Fledged practice website for Automation Engineers");
 
@@ -79,7 +79,7 @@ public class Scrollupdown_funtionality extends AbstractMethods{
 		try 
 		{
 			Reusableclass rc = new Reusableclass(driver);
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");

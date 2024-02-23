@@ -45,28 +45,28 @@ public class LoginUser extends AbstractMethods{
 			Reusableclass rc= new Reusableclass (driver);
 			//rc.urlEquals("https://automationexercise.com/");
 			
-			Wait_Till_Link_Is_Clickable(login);
+			waitTillLinkIsClickable(login);
 			login.click();
 			
 			ReusableMethods rs = new ReusableMethods(driver);
 			rs.signup();
 			rs.registrationpage();
 
-			Wait_Till_Link_Is_Clickable(login);
+			waitTillLinkIsClickable(login);
 			login.click();
-			Wait_Till_Link_Is_Clickable(logout);
+			waitTillLinkIsClickable(logout);
 			logout.click();
 
 			rc.innerTextEquals(loginaccount, "Login to your account");
 
 			rs.login();
 			rc.innerTextEquals(loogedinas, loogedinas.getText());
-			Wait_Till_Link_Is_Clickable(deleteaccount);
+			waitTillLinkIsClickable(deleteaccount);
 			deleteaccount.click();
 
 			rc.innerTextEquals(accountdeletedinfo, "ACCOUNT DELETED!");
 			
-			Wait_Till_Link_Is_Clickable(Continuebutton);
+			waitTillLinkIsClickable(Continuebutton);
 			Continuebutton.click();
 			System.out.println("Testcase2--> executed succesfully");
 		} catch (Exception e) {
@@ -82,7 +82,7 @@ public class LoginUser extends AbstractMethods{
 		try {
 			Reusableclass rc= new Reusableclass (driver);
 			//rc.urlEquals("https://automationexercise.com/");
-			Wait_Till_Link_Is_Clickable(login);
+			waitTillLinkIsClickable(login);
 			login.click();
 
 			rc.innerTextEquals(loginaccount, "Login to your account");
@@ -105,15 +105,15 @@ public class LoginUser extends AbstractMethods{
 		implicitlywaitmethod();
 		try {
 			
-			Wait_Till_Link_Is_Clickable(login);
+			waitTillLinkIsClickable(login);
 			login.click();
 			ReusableMethods rs = new ReusableMethods(driver);
 			rs.signup();
 			rs.registrationpage();
 			
-			Wait_Till_Link_Is_Clickable(login);
+			waitTillLinkIsClickable(login);
 			login.click();
-			Wait_Till_Link_Is_Clickable(logout);
+			waitTillLinkIsClickable(logout);
 			logout.click();
 
 			Reusableclass rc = new Reusableclass(driver);
@@ -122,7 +122,7 @@ public class LoginUser extends AbstractMethods{
 			rs.login();
 			rc.innerTextEquals(loogedinas, loogedinas.getText());
 
-			Wait_Till_Link_Is_Clickable(logout);
+			waitTillLinkIsClickable(logout);
 			logout.click();
 
 			Assert.assertEquals(loginaccount.getText(), "Login to your account");

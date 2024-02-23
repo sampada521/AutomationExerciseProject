@@ -101,7 +101,7 @@ public class PlaceOrderPage extends AbstractMethods{
 
 		try {
 			Reusableclass rc = new Reusableclass(driver);
-			Wait_Till_Link_Is_Clickable(homepage);
+			waitTillLinkIsClickable(homepage);
 			homepage.click();
 
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/");
@@ -110,20 +110,20 @@ public class PlaceOrderPage extends AbstractMethods{
 			js.executeScript("arguments[0].scrollIntoView();", scrolldown);
 
 			Hoveranyelement(select_firstproduct);
-			Wait_Till_Link_Is_Clickable(addcart1);
+			waitTillLinkIsClickable(addcart1);
 			addcart1.click();
-			Wait_Till_Link_Is_Clickable(viewcart);
+			waitTillLinkIsClickable(viewcart);
 			viewcart.click();
 
 			js.executeScript("arguments[0].scrollIntoView();", homepage);
 
-			Wait_Till_Link_Is_Clickable(cartbutton);
+			waitTillLinkIsClickable(cartbutton);
 			cartbutton.click();
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/view_cart");
 
-			Wait_Till_Link_Is_Clickable(proceedtocheckout);
+			waitTillLinkIsClickable(proceedtocheckout);
 			proceedtocheckout.click();
-			Wait_Till_Link_Is_Clickable(loginbutton);
+			waitTillLinkIsClickable(loginbutton);
 			loginbutton.click();
 
 			Assert.assertEquals(newusersignup.getText(), "New User Signup!");
@@ -131,19 +131,19 @@ public class PlaceOrderPage extends AbstractMethods{
 			rs.signup();
 
 			Assert.assertEquals(enteraccountinfo.getText(), "ENTER ACCOUNT INFORMATION");
-			Wait_Till_Link_Is_Clickable(title);
+			waitTillLinkIsClickable(title);
 			title.click();
 
 			rs.registrationpage();
 			Assert.assertEquals(accountcreatedmessage.getText(), "ACCOUNT CREATED!");
-			Wait_Till_Link_Is_Clickable(Continuebutton);
+			waitTillLinkIsClickable(Continuebutton);
 			Continuebutton.click();
 			
 			Assert.assertEquals(loogedinas.getText(), loogedinas.getText());
 			
-			Wait_Till_Link_Is_Clickable(cartbutton);
+			waitTillLinkIsClickable(cartbutton);
 			cartbutton.click();
-			Wait_Till_Link_Is_Clickable(proceedtocheckout);
+			waitTillLinkIsClickable(proceedtocheckout);
 			proceedtocheckout.click();
 
 			rc.elementAvailable(addressdetails, true);
@@ -152,17 +152,17 @@ public class PlaceOrderPage extends AbstractMethods{
 			String textmessage = prop.getProperty("textmessage");
 			message.sendKeys(textmessage);
 
-			Wait_Till_Link_Is_Clickable(placeorderbutton);
+			waitTillLinkIsClickable(placeorderbutton);
 			placeorderbutton.click();
 
 			rs.payment();
 			Assert.assertEquals(alertmessage.getText(),alertmessage.getText());
 
-			Wait_Till_Link_Is_Clickable(deleteaccount);
+			waitTillLinkIsClickable(deleteaccount);
 			deleteaccount.click();
 			Assert.assertEquals(accountdeletedinfo.getText(), "ACCOUNT DELETED!");
 
-			Wait_Till_Link_Is_Clickable(Continuebutton);
+			waitTillLinkIsClickable(Continuebutton);
 			Continuebutton.click();
 			System.out.println("Testcase14--> executed succesfully");
 
@@ -193,14 +193,14 @@ public class PlaceOrderPage extends AbstractMethods{
 
 			Assert.assertEquals(enteraccountinfo.getText(), "ENTER ACCOUNT INFORMATION");
 			//new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(title)).click();
-			Wait_Till_Link_Is_Clickable(title);
+			waitTillLinkIsClickable(title);
 			title.click();
 		
 			rs.registrationpage();
 			Assert.assertEquals(accountcreatedmessage.getText(), "ACCOUNT CREATED!");
 
 			//new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(Continuebutton)).click();
-			Wait_Till_Link_Is_Clickable(Continuebutton);
+			waitTillLinkIsClickable(Continuebutton);
 			Continuebutton.click();
 			Assert.assertEquals(loogedinas.getText(), loogedinas.getText());
 			
@@ -209,21 +209,21 @@ public class PlaceOrderPage extends AbstractMethods{
 
 			Hoveranyelement(select_firstproduct);
 			//new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(addcart1)).click();
-			Wait_Till_Link_Is_Clickable(addcart1);
+			waitTillLinkIsClickable(addcart1);
 			addcart1.click();
 			//new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(viewcart)).click();
-			Wait_Till_Link_Is_Clickable(viewcart);
+			waitTillLinkIsClickable(viewcart);
 			viewcart.click();
 
 			js.executeScript("arguments[0].scrollIntoView();", homepage);
 
 			//new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(cartbutton)).click();
-			Wait_Till_Link_Is_Clickable(cartbutton);
+			waitTillLinkIsClickable(cartbutton);
 			cartbutton.click();
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/view_cart");
 
 			//new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(proceedtocheckout)).click();
-			Wait_Till_Link_Is_Clickable(proceedtocheckout); 
+			waitTillLinkIsClickable(proceedtocheckout); 
 			proceedtocheckout.click();
 			
 			rc.elementAvailable(addressdetails, true);
@@ -233,17 +233,17 @@ public class PlaceOrderPage extends AbstractMethods{
 			message.sendKeys(textmessage);
 
 			//new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(placeorderbutton)).click();
-			Wait_Till_Link_Is_Clickable(placeorderbutton); 
+			waitTillLinkIsClickable(placeorderbutton); 
 			placeorderbutton.click();
 
 			rs.payment();
 			Assert.assertEquals(alertmessage.getText(),alertmessage.getText());
 			//new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(deleteaccount)).click();
-			Wait_Till_Link_Is_Clickable(deleteaccount); 
+			waitTillLinkIsClickable(deleteaccount); 
 			deleteaccount.click();
 			Assert.assertEquals(accountdeletedinfo.getText(), "ACCOUNT DELETED!");
 			//new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.elementToBeClickable(Continuebutton)).click();
-			Wait_Till_Link_Is_Clickable(Continuebutton);
+			waitTillLinkIsClickable(Continuebutton);
 			Continuebutton.click();
 			
 			System.out.println("Testcase15--> executed succesfully");
@@ -265,16 +265,16 @@ public class PlaceOrderPage extends AbstractMethods{
 		try {
 			Reusableclass rc= new Reusableclass (driver);
 			//rc.urlEquals("https://automationexercise.com/");
-			Wait_Till_Link_Is_Clickable(login);
+			waitTillLinkIsClickable(login);
 			login.click();
 			
 			ReusableMethods rs = new ReusableMethods(driver);
 			rs.signup();
 			rs.registrationpage();
 
-			Wait_Till_Link_Is_Clickable(login);
+			waitTillLinkIsClickable(login);
 			login.click();
-			Wait_Till_Link_Is_Clickable(logout);
+			waitTillLinkIsClickable(logout);
 			logout.click();
 
 			rc.innerTextEquals(loginaccount, "Login to your account");
@@ -286,18 +286,18 @@ public class PlaceOrderPage extends AbstractMethods{
 			js.executeScript("arguments[0].scrollIntoView();", scrolldown);
 
 			Hoveranyelement(select_firstproduct);
-			Wait_Till_Link_Is_Clickable(addcart1);
+			waitTillLinkIsClickable(addcart1);
 			addcart1.click();
-			Wait_Till_Link_Is_Clickable(viewcart);
+			waitTillLinkIsClickable(viewcart);
 			viewcart.click();
 
 			js.executeScript("arguments[0].scrollIntoView();", homepage);
 
-			Wait_Till_Link_Is_Clickable(cartbutton);
+			waitTillLinkIsClickable(cartbutton);
 			cartbutton.click();
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/view_cart");
 
-			Wait_Till_Link_Is_Clickable(proceedtocheckout);
+			waitTillLinkIsClickable(proceedtocheckout);
 			proceedtocheckout.click();
 			
 			rc.elementAvailable(addressdetails, true);
@@ -307,15 +307,15 @@ public class PlaceOrderPage extends AbstractMethods{
 			message.sendKeys(textmessage);
 
 			
-			Wait_Till_Link_Is_Clickable(placeorderbutton);
+			waitTillLinkIsClickable(placeorderbutton);
 			placeorderbutton.click();
 
 			rs.payment();
 			Assert.assertEquals(alertmessage.getText(),alertmessage.getText());
-			Wait_Till_Link_Is_Clickable(deleteaccount);
+			waitTillLinkIsClickable(deleteaccount);
 			deleteaccount.click();
 			Assert.assertEquals(accountdeletedinfo.getText(), "ACCOUNT DELETED!");
-			Wait_Till_Link_Is_Clickable(Continuebutton);
+			waitTillLinkIsClickable(Continuebutton);
 			Continuebutton.click();
 			
 			System.out.println("Testcase16--> executed succesfully");
@@ -344,15 +344,15 @@ public class PlaceOrderPage extends AbstractMethods{
 		try {
 			Reusableclass rc= new Reusableclass (driver);
 			//rc.urlEquals("https://automationexercise.com/");
-			Wait_Till_Link_Is_Clickable(login);
+			waitTillLinkIsClickable(login);
 			login.click();
 			
 			ReusableMethods rs = new ReusableMethods(driver);
 			rs.signup();
 			rs.registrationpage();
-			Wait_Till_Link_Is_Clickable(login);
+			waitTillLinkIsClickable(login);
 			login.click();
-			Wait_Till_Link_Is_Clickable(logout);
+			waitTillLinkIsClickable(logout);
 			logout.click();
 
 			rc.innerTextEquals(loginaccount, "Login to your account");
@@ -364,23 +364,23 @@ public class PlaceOrderPage extends AbstractMethods{
 			js.executeScript("arguments[0].scrollIntoView();", scrolldown);
 
 			Hoveranyelement(select_firstproduct);
-			Wait_Till_Link_Is_Clickable(addcart1);
+			waitTillLinkIsClickable(addcart1);
 			addcart1.click();
-			Wait_Till_Link_Is_Clickable(viewcart);
+			waitTillLinkIsClickable(viewcart);
 			viewcart.click();
 
 			js.executeScript("arguments[0].scrollIntoView();", homepage);
-			Wait_Till_Link_Is_Clickable(cartbutton);
+			waitTillLinkIsClickable(cartbutton);
 			cartbutton.click();
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/view_cart");
-			Wait_Till_Link_Is_Clickable(proceedtocheckout);
+			waitTillLinkIsClickable(proceedtocheckout);
 			proceedtocheckout.click();
 			rc.innerTextEquals(deliveryaddress, address);
 			rc.innerTextEquals(billingaddress, address);
-			Wait_Till_Link_Is_Clickable(deleteaccount);
+			waitTillLinkIsClickable(deleteaccount);
 			deleteaccount.click();
 			Assert.assertEquals(accountdeletedinfo.getText(), "ACCOUNT DELETED!");
-			Wait_Till_Link_Is_Clickable(Continuebutton);
+			waitTillLinkIsClickable(Continuebutton);
 			Continuebutton.click();
 			
 			System.out.println("Testcase23--> executed succesfully");
@@ -401,13 +401,13 @@ public class PlaceOrderPage extends AbstractMethods{
 		try {
 			Reusableclass rc= new Reusableclass (driver);
 			//rc.urlEquals("https://automationexercise.com/");
-			Wait_Till_Link_Is_Clickable(login);
+			waitTillLinkIsClickable(login);
 			login.click();
 			
 			ReusableMethods rs = new ReusableMethods(driver);
 			rs.signup();
 			rs.registrationpage();
-			Wait_Till_Link_Is_Clickable(Continuebutton);
+			waitTillLinkIsClickable(Continuebutton);
 			Continuebutton.click();
 			
 			Assert.assertEquals(loogedinas.getText(), loogedinas.getText());
@@ -416,21 +416,21 @@ public class PlaceOrderPage extends AbstractMethods{
 			js.executeScript("arguments[0].scrollIntoView();", scrolldown);
 
 			Hoveranyelement(select_firstproduct);
-			Wait_Till_Link_Is_Clickable(addcart1);
+			waitTillLinkIsClickable(addcart1);
 			addcart1.click();
-			Wait_Till_Link_Is_Clickable(viewcart);
+			waitTillLinkIsClickable(viewcart);
 			viewcart.click();
-			Wait_Till_Link_Is_Clickable(cartbutton);
+			waitTillLinkIsClickable(cartbutton);
 			cartbutton.click();
 			
 			Assert.assertEquals(driver.getCurrentUrl(), "https://automationexercise.com/view_cart");
 
-			Wait_Till_Link_Is_Clickable(proceedtocheckout);
+			waitTillLinkIsClickable(proceedtocheckout);
 			proceedtocheckout.click();
 			
-			Wait_Till_Link_Is_Clickable(cartbutton);
+			waitTillLinkIsClickable(cartbutton);
 			cartbutton.click();
-			Wait_Till_Link_Is_Clickable(proceedtocheckout);
+			waitTillLinkIsClickable(proceedtocheckout);
 			proceedtocheckout.click();
 			rc.elementAvailable(addressdetails, true);
 			rc.elementAvailable(cartinfo, true);
@@ -438,23 +438,23 @@ public class PlaceOrderPage extends AbstractMethods{
 			js.executeScript("arguments[0].scrollIntoView();", text);
 			String textmessage = prop.getProperty("textmessage");
 			textarea.sendKeys(textmessage);
-			Wait_Till_Link_Is_Clickable(placeorderbutton);
+			waitTillLinkIsClickable(placeorderbutton);
 			placeorderbutton.click();
 			rs.payment();					
 			try{
-				visibility_Of_Element_Located(successmessage);
+				visibilityOfElementLocated(successmessage);
 			}catch(Exception e){
 			    System.err.println("Error while waiting for the notification to appear: "+ e.getMessage());
 			}
 			
-			Wait_Till_Link_Is_Clickable(invoice);
+			waitTillLinkIsClickable(invoice);
 			invoice.click();
-			Wait_Till_Link_Is_Clickable(Continuebutton);
+			waitTillLinkIsClickable(Continuebutton);
 			Continuebutton.click();
-			Wait_Till_Link_Is_Clickable(deleteaccount);
+			waitTillLinkIsClickable(deleteaccount);
 			deleteaccount.click();
 			Assert.assertEquals(accountdeletedinfo.getText(), "ACCOUNT DELETED!");
-			Wait_Till_Link_Is_Clickable(Continuebutton);
+			waitTillLinkIsClickable(Continuebutton);
 			Continuebutton.click();			
 			
 			System.out.println("Testcase24--> executed succesfully");
